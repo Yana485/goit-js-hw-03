@@ -1,15 +1,14 @@
-function getCommonElements(array1, array2) {
-  const newArray = [];
-  for (let i = 0; i < array1.length; i += 1){
-    if(array2.includes(array1[i])){
-      newArray.push(array1[i]);
-    }    
-  }
-    return newArray;
+/*Функція createReversedArray() може приймати довільну кількість аргументів. Доповни код функції так, щоб вона повертала масив усіх аргументів, 
+але в масиві вони повинні йти у зворотному порядку. Тобто, при виклику createReversedArray(1, 2, 3), функція має повернути масив [3, 2, 1]. 
+Використовуй цикл або метод масиву toReversed(), який застосовується до масиву і результатом роботи повертає новий масив з елементами у 
+зворотньому порядку.*/
+
+function createReversedArray() {
+  const newArray = Array.from(arguments);
+  console.log(`newArray is ${newArray}`);
+  const revArray = newArray.toReversed();
+  console.log(revArray);
+  return revArray;
 }
 
-console.log(getCommonElements([1, 2, 3], [2, 4]));
-console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
-console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
-console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
-console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
+console.log(createReversedArray(12, 85, 37, 4));
